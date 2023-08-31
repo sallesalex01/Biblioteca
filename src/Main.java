@@ -122,6 +122,19 @@ public class Main {
 
                 /* Procurar Livros */
                 case 3:
+                    String procura;
+                    System.out.println("Digite o nome do livro");
+                    procura = input.next().toLowerCase();
+
+                    for (int i = 0; i < NumCadastroLivros; i++){
+                        if (livros[i].getNomeLivro().toLowerCase().equals(procura)){
+                            System.out.println("Livro Encontrado");
+                            System.out.println(livros[i].getNomeLivro());
+
+                        }else {
+                            System.out.println("livro não encontrado");
+                        }
+                    }
 
                     break;
 
