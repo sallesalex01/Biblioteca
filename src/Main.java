@@ -127,7 +127,7 @@ public class Main {
                     procura = input.next().toLowerCase();
 
                     for (int i = 0; i < NumCadastroLivros; i++){
-                        if (livros[i].getNomeLivro().toLowerCase().equals(procura)){
+                        if (livros[i].getNomeLivro().toLowerCase().indexOf(procura) == 0){
                             System.out.println("Livro Encontrado");
                             System.out.println(livros[i].getNomeLivro());
 
