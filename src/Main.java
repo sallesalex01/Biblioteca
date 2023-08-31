@@ -92,9 +92,7 @@ public class Main {
                     prateleira = input.next();
                     input.nextLine();
 
-                    System.out.println("Digite o ISBN: ");
-                    ISBN = input.next();
-                    input.nextLine();
+                    ISBN = "-";
 
                     System.out.println("Digite o CDD: ");
                     CDD = input.next();
@@ -147,22 +145,7 @@ public class Main {
                     }
                     break;
                 case 5:
-                    if (NumCadastroRevistas == 0) {
-                        System.out.println("Nenhum livro cadastrado ainda.");
-                    } else {
-                        for (int i = 0; i < NumCadastroRevistas; i++) {
-                            System.out.println("Revistas: " + (i +1));
-                            System.out.println(revistas[i].getNomeLivro() + ", " +
-                                    revistas[i].getAutor()+", " +
-                                    revistas[i].getISBN() + ", "+
-                                    revistas[i].getAno()+ ", "+
-                                    revistas[i].getEditora()+ ", "+
-                                    revistas[i].getPrateleira()+ ", "+
-                                    revistas[i].getSecao()+ ", "+
-                                    revistas[i].getCDD()+ ", "+
-                                    revistas[i].getEdicao());
-                        }
-                    }
+                    listarRevista(revistas, NumCadastroRevistas);
                     break;
 
                 /* Quantidade Cadastrada/livre */
@@ -196,6 +179,25 @@ public class Main {
         } while (escolha != 9);
 
         input.close();
+    }
+
+    private static void listarRevista(Revista[] revistas, int NumCadastroRevistas) {
+        if (NumCadastroRevistas == 0) {
+            System.out.println("Nenhum livro cadastrado ainda.");
+        } else {
+            for (int i = 0; i < NumCadastroRevistas; i++) {
+                System.out.println("Revistas: " + (i +1));
+                System.out.println(revistas[i].getNomeLivro() + ", " +
+                        revistas[i].getAutor()+", " +
+                        revistas[i].getISSN() + ", "+
+                        revistas[i].getAno()+ ", "+
+                        revistas[i].getEditora()+ ", "+
+                        revistas[i].getPrateleira()+ ", "+
+                        revistas[i].getSecao()+ ", "+
+                        revistas[i].getCDD()+ ", "+
+                        revistas[i].getEdicao());
+            }
+        }
     }
 }
 
